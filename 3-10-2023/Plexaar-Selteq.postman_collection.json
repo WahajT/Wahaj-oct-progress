@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "d7a8468b-77ef-419c-b02a-e9eb9a30815b",
+		"name": "Plexaar-Selteq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28989745",
+		"_collection_link": "https://speeding-station-369488.postman.co/workspace/New-Team-Workspace~bad5cda0-9850-46fa-be0f-982867d4d308/collection/1963657-d7a8468b-77ef-419c-b02a-e9eb9a30815b?action=share&source=collection_link&creator=28989745"
+	},
+	"item": [
+		{
+			"name": "searchApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nodejs-dev.findanexpert.net/api/user/search?query=dro&currentUserId=195",
+					"protocol": "https",
+					"host": [
+						"nodejs-dev",
+						"findanexpert",
+						"net"
+					],
+					"path": [
+						"api",
+						"user",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "dro"
+						},
+						{
+							"key": "currentUserId",
+							"value": "195"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pleaxaar SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"raheem@expertcentre.co.uk\",\n    \"password\" : \"Qwerty@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://plexaargateway.findanexpert.net/signup_svc/pb/users/signIn"
+			},
+			"response": []
+		},
+		{
+			"name": "Signup_api_for_chatandcall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\":\"alt.el-5ooovfs4@yopmail.com\",\r\n\"phone\":\"+33756490723\",\r\n\"userName\":\"Abc Def\",\r\n\"name\":\"Abc\",\r\n\"password\":\"axdef121%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://nodejs-dev.findanexpert.net/api/user/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "getallcontacts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Hard-Id",
+						"value": "650019cf716f65c276339874",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "1ha469k2c1flvu3hjr1g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userId\":\"abcd\",\r\n\"userName\":\"Dro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://nodejs-dev.findanexpert.net/api/contact/getAllContacts"
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Hard-id",
+						"value": "650019cf716f65c276339874",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "1ha4ddi8dffl7ga6rev8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"contacts\":[{\"userId\":\"abcd\",\"name\":\"Sam\",\"userName\":\"Sam Ranger\"},{\"userId\":\"abcd\",\"name\":\"Ali\",\"userName\":\"Sky Gul\"}],\r\n\"text\":\"Hi,It is Testuser123,I want to connect with you\",\r\n\"requestedBy\":\"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://nodejs-dev.findanexpert.net/api/contact/createContact"
+			},
+			"response": []
+		},
+		{
+			"name": "AcceptRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"requestedBy\": \"abcd\",//Accepting user Id\r\n        \"conversationId\": \"abcd.abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://nodejs-dev.findanexpert.net/api/contact/acceptRequest"
+			},
+			"response": []
+		},
+		{
+			"name": "getallmessages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://nodejs-dev.findanexpert.net/api/message/get/abcd.abcd"
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://nodejs-dev.findanexpert.net/api/message/get/650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Sep 2023 14:20:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7194"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, authorization, Authorization, hard-ID, *"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE, Authorization, authorization"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c1a-VfsugEAPkFgkWB/y89yat6W87a4\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"code\": 0,\n    \"message\": \"Fetched 21 messages\",\n    \"data\": [\n        {\n            \"_id\": \"65043bc03ccfa7b6df54bc3f\",\n            \"text\": \"Gfhgghg\\n\\nGhgbh\\nHghh\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T11:10:56.188Z\",\n            \"updatedAt\": \"2023-09-15T11:10:56.188Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65044e6b3ccfa7b6df54bdf0\",\n            \"text\": \"Hfhg\\n\\n\\n\\n\\nGgfhhfg\\nGvjhgcjggv\\nChgfc\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T12:30:35.958Z\",\n            \"updatedAt\": \"2023-09-15T12:30:35.958Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65044e7d3ccfa7b6df54bdf4\",\n            \"text\": \"G Hhghh fhg\\nGvnv\\n\\n\\n\\nFhfvvgj\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T12:30:53.516Z\",\n            \"updatedAt\": \"2023-09-15T12:30:53.516Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65044e813ccfa7b6df54bdf7\",\n            \"text\": \"Gfg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T12:30:57.742Z\",\n            \"updatedAt\": \"2023-09-15T12:30:57.742Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"650450a83ccfa7b6df54be3a\",\n            \"text\": \"Ghfgg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T12:40:08.115Z\",\n            \"updatedAt\": \"2023-09-15T12:40:08.115Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"650450b63ccfa7b6df54be3d\",\n            \"text\": \"Fhfgf\\nGv\\n\\n\\n\\nHhggjfvhg\\nVhhhgb\\n\\n\\n\\nGhgguyyh\\nGhhgjgg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T12:40:22.234Z\",\n            \"updatedAt\": \"2023-09-15T12:40:22.234Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6504559e3ccfa7b6df54bebc\",\n            \"text\": \"Fhfh\\nBbh\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:01:18.818Z\",\n            \"updatedAt\": \"2023-09-15T13:01:18.818Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6504590126c6db748c6812cd\",\n            \"text\": \"Fhfhg\\nBbhbjh\\n\\nHgjhhhhjhj\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:15:45.141Z\",\n            \"updatedAt\": \"2023-09-15T13:15:45.141Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6504590426c6db748c6812d0\",\n            \"text\": \"Fhfgh\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:15:48.591Z\",\n            \"updatedAt\": \"2023-09-15T13:15:48.591Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6504594026c6db748c6812d3\",\n            \"text\": \"Gchcv \",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:16:48.297Z\",\n            \"updatedAt\": \"2023-09-15T13:16:48.297Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045d4426c6db748c6812d6\",\n            \"text\": \"Fjrgx\\nFvjg\\n\\nGggggg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:33:56.378Z\",\n            \"updatedAt\": \"2023-09-15T13:33:56.378Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045d5526c6db748c6812d9\",\n            \"text\": \"Fhxbf\\nFvgg\\nFg\\n\\nFhgg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:34:13.788Z\",\n            \"updatedAt\": \"2023-09-15T13:34:13.788Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045db0cf3ce2b9aef40e9e\",\n            \"text\": \" \",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:35:44.888Z\",\n            \"updatedAt\": \"2023-09-15T13:35:44.888Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045db8cf3ce2b9aef40ea6\",\n            \"text\": \" Fhfgf \",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:35:52.238Z\",\n            \"updatedAt\": \"2023-09-15T13:35:52.238Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045dc1cf3ce2b9aef40ea9\",\n            \"text\": \"Pjvcsggi  if c\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:36:01.674Z\",\n            \"updatedAt\": \"2023-09-15T13:36:01.674Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045e46cf3ce2b9aef40eac\",\n            \"text\": \"Gvhfh\\nFhg\\n\\nFhfgg\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:38:14.426Z\",\n            \"updatedAt\": \"2023-09-15T13:38:14.426Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045e5ccf3ce2b9aef40eaf\",\n            \"text\": \"Uyghhh\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:38:36.749Z\",\n            \"updatedAt\": \"2023-09-15T13:38:36.749Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045ed4cf3ce2b9aef40eb2\",\n            \"text\": \"Ggxhf\\nFh\\nOutfhu\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:40:36.568Z\",\n            \"updatedAt\": \"2023-09-15T13:40:36.568Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045edccf3ce2b9aef40eb5\",\n            \"text\": \"Utghhh\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:40:44.527Z\",\n            \"updatedAt\": \"2023-09-15T13:40:44.527Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045f55fbd5e29090e8c0ed\",\n            \"text\": \"Oubhgppkhbjxgfgu\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:42:45.537Z\",\n            \"updatedAt\": \"2023-09-15T13:42:45.537Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65045f63fbd5e29090e8c0f0\",\n            \"text\": \"Turfggxf\",\n            \"from\": \"650036fc978dc893b8d66b9c\",\n            \"to\": null,\n            \"conversationId\": \"650036fc978dc893b8d66b9c.65003bf7978dc893b8d66bc1\",\n            \"isForwared\": false,\n            \"source\": null,\n            \"seen\": [],\n            \"status\": 0,\n            \"messageType\": 0,\n            \"type\": 1,\n            \"createdAt\": \"2023-09-15T13:42:59.677Z\",\n            \"updatedAt\": \"2023-09-15T13:42:59.677Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteMessageByID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://nodejs-dev.findanexpert.net/api/message/remove/651be6013a19d6aee5112860"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateNewMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"updatedMessage\":\"updated updatedMessage\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://nodejs-dev.findanexpert.net/api/message/update/651be6013a19d6aee5112860"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"requestedBy\": \"102\",\r\n        \"conversationId\": \"101.102\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://nodejs-dev.findanexpert.net/api/contact/deleteContact"
+			},
+			"response": []
+		}
+	]
+}

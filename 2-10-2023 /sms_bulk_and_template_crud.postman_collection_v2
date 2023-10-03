@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "b272d817-c045-48cb-a20a-e248ae1ce4e1",
+		"name": "sms_bulk_and_template_crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18618961"
+	},
+	"item": [
+		{
+			"name": "sms template",
+			"item": [
+				{
+					"name": "createSMSTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"template\": \"Dear User <br/> This is automatic generated Marketing Promotion sms. Thanks\",\r\n    \"title\": \"Promotion Message\",\r\n    \"shortCode\": \"promo_sms1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://plexaargateway.findanexpert.net/sms_svc/pb",
+							"protocol": "https",
+							"host": [
+								"plexaargateway",
+								"findanexpert",
+								"net"
+							],
+							"path": [
+								"sms_svc",
+								"pb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTemplateById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"Id\":\"64afc20c5a38f50137c2f548\",\r\n    \"template\": \"Hi,Here is your secret sasc code for reset.Thanks & Regards Expert\",\r\n    \"title\": \"otp email aupdated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms_svc/sms/templates/updateOneById/64e3e59108984dbb4e1ae0a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"templates",
+								"updateOneById",
+								"64e3e59108984dbb4e1ae0a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTemplates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9002/sms/templates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTemplateById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\":\"64ae86d1e2db407b1b3bf6eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms/templates/getTemplateById",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms",
+								"templates",
+								"getTemplateById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTemplateById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\":\"64afc20c5a38f50137c2f548\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms/templates/deleteTemplateByShortCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms",
+								"templates",
+								"deleteTemplateByShortCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllTemplates",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9002/sms/templates/deleteAllTemplate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms",
+								"templates",
+								"deleteAllTemplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatetemplatebyShortCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shortCode\":\"promo_sms5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://plexaargateway.findanexpert.net/sms_svc/sms/templates/getTemplateByShortCode",
+							"protocol": "https",
+							"host": [
+								"plexaargateway",
+								"findanexpert",
+								"net"
+							],
+							"path": [
+								"sms_svc",
+								"sms",
+								"templates",
+								"getTemplateByShortCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "credentials",
+			"item": [
+				{
+					"name": "create sms credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provider\": \"messageBird\",\n    \"AccessKey\": \"4444444465 not enabled right ow accesskeyheerreere...\",\n    \"type\": \"otp\",\n    \"country\": \"uk\",\n\n    \"enabled\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms/credentials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms",
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get credentials",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apigateway-preprod.findanexpert.net/sms/credentials",
+							"protocol": "https",
+							"host": [
+								"apigateway-preprod",
+								"findanexpert",
+								"net"
+							],
+							"path": [
+								"sms",
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update credentials",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provider\": \"twilio\",\n    \"sid\": \"AC906f84c86410e368cd630b0e7bea751f\",\n                \"auth_token\": \"57a2d43f85778d42e83389f75b860dba\",\n                \"number\": \"+447903504211\",\n    \"type\": \"otp\",\n    \"country\": \"uk\",\n    \"enabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{smsSvcUrl}}/credentials/63fc5cf0db6e569374410449",
+							"host": [
+								"{{smsSvcUrl}}"
+							],
+							"path": [
+								"credentials",
+								"63fc5cf0db6e569374410449"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete credentials",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"auth\": {\n        \"user\": \"asdf\",\n        \"pass\": \"asdf\"\n    },\n    \"server\":\"host.google.com|updated\",\n    \"port\": 465,\n    \"secure\": false,\n    \"country\": \"us\",\n    \"type\": \"otp\",\n    \"_id\":\"63ea3a7dd4863a72847a3c75\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{smsSvcUrl}}/credentials/64255e50eb50b516521acee2",
+							"host": [
+								"{{smsSvcUrl}}"
+							],
+							"path": [
+								"credentials",
+								"64255e50eb50b516521acee2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fieldscrud",
+			"item": [
+				{
+					"name": "addfield",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFields",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateOnebyId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneByID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllTemplates",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tables",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:9002/sms_svc/sms/tables?table_name=table1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"tables"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "table1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"table_name\":\"table2\",\r\n    \"column_name\": \"dsada\",\r\n    \"column_no\": 1,\r\n    \"sticky\": true,\r\n    \"sticky_priority\": 1,\r\n    \"priority\": 4,\r\n    \"position\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms_svc/sms/tables",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"tables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"table_name\":\"table1\",\r\n     \"sticky\":true\r\n     \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms_svc/sms/tables/updateOneById/64e26f3504dabf6f0f3ebad3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"tables",
+								"updateOneById",
+								"64e26f3504dabf6f0f3ebad3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9002/sms_svc/sms/tables/deleteOneById/64df3a1ef5e2275ea2e00ac7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"tables",
+								"deleteOneById",
+								"64df3a1ef5e2275ea2e00ac7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "smsType",
+			"item": [
+				{
+					"name": "A",
+					"item": []
+				},
+				{
+					"name": "addsmstype",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"promotion message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9002/sms_svc/sms/smstype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9002",
+							"path": [
+								"sms_svc",
+								"sms",
+								"smstype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sendBulkMessages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortCode\":\"promo_sms8dasnmi1\",\r\n    \"to\":[\"+923034276219\"],\r\n    \"fields_info\":{\r\n        \"name\":\"umair\",\r\n        \"address\":\"Dha phase 6\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/sms_svc/message/send/bulk/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"sms_svc",
+						"message",
+						"send",
+						"bulk",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getsmslogs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddUserPreference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"21312\",\r\n    \"name\":\"umair\",\r\n    \"phoneNumber\":\"+923034276219\",\r\n    \"preferences\":[\"promo_sms1\",\"promo_email\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/user/preference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"user",
+						"preference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUMzMjAyYzNhYzAxMTdkMjhlMWJkMjhkYmVjYjlhMGVkYzplYmRmMzNmMjliMWMxNzEzNmRiNmIxZGM0YjdmN2IxMA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"_id\":\"123\",\r\n    \"number\":\"+923034276219\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/sms/otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"sms",
+						"otp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
