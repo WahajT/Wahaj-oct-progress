@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "d8f1e19f-b7cc-42b4-967d-0b435d2d735a",
+		"name": "sms_bulk_and_template_crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28989745"
+	},
+	"item": [
+		{
+			"name": "sms template",
+			"item": [
+				{
+					"name": "createSMSTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"template\": \"This one is mine template\",\r\n    \"title\": \"Spirit\",\r\n    \"shortCode\": \"Breaker\",\r\n    \"fields\":\"New field\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates"
+					},
+					"response": []
+				},
+				{
+					"name": "getTemplateByshortCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"shortCode\":\"Demon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/getTemplateByShortCode"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTemplates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTemplateByshortCode",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shortCode\":\"shaking\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/deleteTemplateByShortCode"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllTemplates",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/deleteAllTemplate"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatetemplatebyShortCode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"template\": \"I have changed the sentence\",\r\n    \"title\": \"Wind Ranger\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/update/food"
+					},
+					"response": []
+				},
+				{
+					"name": "updateTemapleproperty",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"type\":\"fields\",\r\n   \"sticky\":true\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/updateTemplateProperty"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "credentials",
+			"item": [
+				{
+					"name": "create sms credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provider\": \"Twillio\",\n    \"AccessKey\": \"4444444465 not enabled right ow accesskeyheerreere...\",\n    \"type\": \"otp\",\n    \"country\": \"uk\",\n\n    \"enabled\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/credentials"
+					},
+					"response": []
+				},
+				{
+					"name": "get credentials",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apigateway-preprod.findanexpert.net/sms/credentials"
+					},
+					"response": []
+				},
+				{
+					"name": "update credentials",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provider\": \"twilio\",\n    \"sid\": \"AC906f84c86410e368cd630b0e7bea751f\",\n                \"auth_token\": \"57a2d43f85778d42e83389f75b860dba\",\n                \"number\": \"+447903504211\",\n    \"type\": \"otp\",\n    \"country\": \"uk\",\n    \"enabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/credentials/63fc5cf0db6e569374410449"
+					},
+					"response": []
+				},
+				{
+					"name": "delete credentials",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"auth\": {\n        \"user\": \"asdf\",\n        \"pass\": \"asdf\"\n    },\n    \"server\":\"host.google.com|updated\",\n    \"port\": 465,\n    \"secure\": false,\n    \"country\": \"us\",\n    \"type\": \"otp\",\n    \"_id\":\"63ea3a7dd4863a72847a3c75\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/credentials/64255e50eb50b516521acee2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fieldscrud",
+			"item": [
+				{
+					"name": "addfields",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Country\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/fields"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/fields"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOnebyId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"address2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/fields/updateOneById/64f5f0df2b304d5e42126739"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/fields/deleteOneById/651d60a8c1293dfc9f0d0e94"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllTemplates",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/fields/deleteAllTemplate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tables",
+			"item": [
+				{
+					"name": "createTable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"table_name\":\"table1\",\r\n    \"column_name\": \"table4\",\r\n    \"column_no\": 3,\r\n    \"sticky\": true,\r\n    \"sticky_priority\": 1,\r\n    \"priority\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/tables"
+					},
+					"response": []
+				},
+				{
+					"name": "getAlltables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/tables"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOneById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"table_name\":\"table3\",\r\n     \"sticky\":true\r\n     \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/tables/updateOneById/651d5d23c1293dfc9f0d0ce6"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/tables/deleteOneById/6651abacbcc5e2b6123e67215"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/tables/deleteAll"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "smsType",
+			"item": [
+				{
+					"name": "addsmstype",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"promotion message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/smstype"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllSmsTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/smstype"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sendBulkMessages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortCode\":\"food\",\r\n    \"to\":[\"+923034276219\"],\r\n    \"fields_info\":{\r\n        \"name\":\"umair\",\r\n        \"address\":\"Dha phase 6\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/message/send/bulk/test"
+			},
+			"response": []
+		},
+		{
+			"name": "getsmslogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://plexaargateway-staging.findanexpert.net/sms_svc/sms/templates/update/"
+			},
+			"response": []
+		},
+		{
+			"name": "AddUserPreference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"21312\",\r\n    \"name\":\"umair\",\r\n    \"phoneNumber\":\"+923034276219\",\r\n    \"preferences\":[\"promo_sms1\",\"promo_email\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9002/user/preference"
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUMzMjAyYzNhYzAxMTdkMjhlMWJkMjhkYmVjYjlhMGVkYzplYmRmMzNmMjliMWMxNzEzNmRiNmIxZGM0YjdmN2IxMA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"_id\":\"123\",\r\n    \"number\":\"+923034276219\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9002/sms/otp"
+			},
+			"response": []
+		}
+	]
+}
