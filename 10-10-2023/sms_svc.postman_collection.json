@@ -1,0 +1,773 @@
+{
+	"info": {
+		"_postman_id": "38df5288-5aca-43a2-9a8f-d1ae64fb0dbe",
+		"name": "sms_svc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28989745"
+	},
+	"item": [
+		{
+			"name": "sms template",
+			"item": [
+				{
+					"name": "create template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Promotion\",\r\n    \"template\":\"Your name{{OTP}}\",\r\n    \"shortCode\":\"title\",\r\n    \"fields\":[\r\n        \"MobOTP\"\r\n    ],\r\n    \"type\":\"BOPOTP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/templates"
+					},
+					"response": []
+				},
+				{
+					"name": "update template",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template\": \"<h1> Hi, {{name}} </h1> </br>Here is your secret code for reset        {{otpCode}}    Thanks & Regards    Expert    \",\n    \"fields\": [\"name\", \"otpCode\"],\n    \"title\": \"otp sms down\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/templates/64ad380bd04e2d953379a46d"
+					},
+					"response": []
+				},
+				{
+					"name": "remove template",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/templates/63db87dfbeae0860bcce98b3"
+					},
+					"response": []
+				},
+				{
+					"name": "get all templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smsSvcUrl_staging}}/templates",
+							"host": [
+								"{{smsSvcUrl_staging}}"
+							],
+							"path": [
+								"templates"
+							],
+							"query": [
+								{
+									"key": "shortCode",
+									"value": "777",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "_id",
+									"value": "652565eb8e0630667d8569c4",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fieldscrud",
+			"item": [
+				{
+					"name": "addfield",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"OTP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/fields"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{smsSvcUrl_staging}}/fields"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOnebyId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/fields/updateOneById/652422398e0630667d8569be"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneByID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{smsSvcUrl_staging}}/fields/deleteOneById/652422398e0630667d8569be"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllTemplates",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{smsSvcUrl_staging}}/fields/deleteAllTemplate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "table",
+			"item": [
+				{
+					"name": "addTable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"table_name\":\"test_table\",\r\n    \"column_name\": \"name\",\r\n    \"column_no\": 1,\r\n    \"sticky\": true\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/tables"
+					},
+					"response": []
+				},
+				{
+					"name": "updateTable",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sticky\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/tables/64f1c05eb3f66235f161df1d"
+					},
+					"response": []
+				},
+				{
+					"name": "removeTable",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/tables/64d4f865d5103bef5ebd3c39"
+					},
+					"response": []
+				},
+				{
+					"name": "getTables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smsSvcUrl_staging}}/tables?limit=100&table_name=test_table&sort=position, -sticky",
+							"host": [
+								"{{smsSvcUrl_staging}}"
+							],
+							"path": [
+								"tables"
+							],
+							"query": [
+								{
+									"key": "column_no",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sticky",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "_id",
+									"value": "64d4f865d5103bef5ebd3c39",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "table_name",
+									"value": "test_table"
+								},
+								{
+									"key": "sort",
+									"value": "position, -sticky"
+								},
+								{
+									"key": "userId",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTablesWithData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smsSvcUrl}}/tables/template-table?table_name=test_table",
+							"host": [
+								"{{smsSvcUrl}}"
+							],
+							"path": [
+								"tables",
+								"template-table"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "test_table"
+								},
+								{
+									"key": "userId",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getTablesWithData",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{emailSvcUrl_live}}/table/template-table?table_name=preferenceTest&userId=1234",
+									"host": [
+										"{{emailSvcUrl_live}}"
+									],
+									"path": [
+										"table",
+										"template-table"
+									],
+									"query": [
+										{
+											"key": "table_name",
+											"value": "preferenceTest"
+										},
+										{
+											"key": "userId",
+											"value": "1234"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Sep 2023 17:08:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6788"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, x-auth-token, authorization, Authorization, *"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE, Authorization, authorization"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1a84-snrL8Kitru85fgvCbvgQ3qSkOcQ\""
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "311"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"64f5ffaac4d8802070dc8e3d\",\n        \"table_name\": \"preferenceTest\",\n        \"column_name\": \"fields\",\n        \"column_no\": \"5\",\n        \"sticky\": false,\n        \"position\": 1,\n        \"isShow\": true,\n        \"createdAt\": \"2023-09-04T16:02:50.772Z\",\n        \"updatedAt\": \"2023-09-04T16:02:50.772Z\",\n        \"__v\": 0,\n        \"column_values\": [\n            {\n                \"value\": [\n                    \"otpCode\"\n                ],\n                \"templateId\": \"63dd21410dfad5d58dddd07e\"\n            },\n            {\n                \"value\": [\n                    \"firstName\",\n                    \"bookingId\"\n                ],\n                \"templateId\": \"64edc3d8fcb2163fada7191c\"\n            },\n            {\n                \"value\": [\n                    \"firstName\",\n                    \"staffInvitation\"\n                ],\n                \"templateId\": \"64edc3d8fcb2163fada7191a\"\n            },\n            {\n                \"value\": [\n                    \"firstName\",\n                    \"serviceProviderInvitation\"\n                ],\n                \"templateId\": \"64edc3d8fcb2163fada7191b\"\n            },\n            {\n                \"value\": [\n                    \"firstName\",\n                    \"lastName\",\n                    \"email\"\n                ],\n                \"templateId\": \"63dd231a0dfad5d58dddd087\"\n            },\n            {\n                \"value\": [\n                    \"id\"\n                ],\n                \"templateId\": \"64f1d9ccb3f66235f161df86\"\n            },\n            {\n                \"value\": [\n                    \"id\"\n                ],\n                \"templateId\": \"64f6faa1a0d8d0a598617b45\"\n            },\n            {\n                \"value\": [],\n                \"templateId\": \"64f6fcf1221c545e1103f29e\"\n            },\n            {\n                \"value\": [],\n                \"templateId\": \"64f6ffd6221c545e1103f2b3\"\n            },\n            {\n                \"value\": [\n                    \"name\",\n                    \"Address\"\n                ],\n                \"templateId\": \"64f70979221c545e1103f38a\"\n            },\n            {\n                \"value\": [\n                    \"name\",\n                    \"Address\"\n                ],\n                \"templateId\": \"64f72f48221c545e1103f4cb\"\n            },\n            {\n                \"value\": [\n                    \"name\",\n                    \"Address\"\n                ],\n                \"templateId\": \"64f97763b2a60bc067999b13\"\n            },\n            {\n                \"value\": [\n                    \"name\"\n                ],\n                \"templateId\": \"6504684f77dd8c1fef26dc32\"\n            }\n        ]\n    },\n    {\n        \"_id\": \"64f5ffb3c4d8802070dc8e40\",\n        \"table_name\": \"preferenceTest\",\n        \"column_name\": \"template\",\n        \"column_no\": \"5\",\n        \"sticky\": false,\n        \"position\": 2,\n        \"isShow\": true,\n        \"createdAt\": \"2023-09-04T16:02:59.587Z\",\n        \"updatedAt\": \"2023-09-04T16:02:59.587Z\",\n        \"__v\": 0,\n        \"column_values\": [\n            {\n                \"value\": \"<p>Dear User </p><p>Here is your secret code  {{otpCode}} for verification. It is updated verified again. Thanks</p>\",\n                \"templateId\": \"63dd21410dfad5d58dddd07e\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p>Here is your secret code  {{otpCode}} for verification. It is updated verified again. Just now updated again. Thanks</p>\\n\\n\",\n                \"templateId\": \"64edc3d8fcb2163fada7191c\"\n            },\n            {\n                \"value\": \"<p>Dear {{firstName}}</p><p>this is invitation from staffInvitation {{staffInvitation}} from selteq.Thanks</p>\",\n                \"templateId\": \"64edc3d8fcb2163fada7191a\"\n            },\n            {\n                \"value\": \"<p>Dear {{firstName}}</p><p>this is invitation from service Provider Invitation {{serviceProviderInvitation}} from selteq.Thanks</p>\",\n                \"templateId\": \"64edc3d8fcb2163fada7191b\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p>Here is your secret code  {{otpCode}} for verification. It is updated verified again. Just now updated again. Thanks</p>\\n\\n\",\n                \"templateId\": \"63dd231a0dfad5d58dddd087\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p> This is automatic generated Marketing Promotion Email. Thanks</p>\\n\\n\",\n                \"templateId\": \"64f1d9ccb3f66235f161df86\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p> This is  generated Marketing Promotion Email. Thanks</p>\\n\\n\",\n                \"templateId\": \"64f6faa1a0d8d0a598617b45\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p> This is  generated Marketing Promotion Email. Thanks</p>\\n\\n\",\n                \"templateId\": \"64f6fcf1221c545e1103f29e\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p> This is  generated Marketing Promotion Email. Thanks</p>\\n\\n\",\n                \"templateId\": \"64f6ffd6221c545e1103f2b3\"\n            },\n            {\n                \"value\": \"<p>Dear User </p>\\n<p> This is  generated Marketing Promotion Email. Thanks</p>\\n\\n\",\n                \"templateId\": \"64f70979221c545e1103f38a\"\n            },\n            {\n                \"value\": \"<p>hi i am</p><p><strong>{{name}} my address </strong></p><p><strong>{{Address}}</strong></p>\",\n                \"templateId\": \"64f72f48221c545e1103f4cb\"\n            },\n            {\n                \"value\": \"<p>hi dear</p><p><strong>{{name}} </strong>your booking is ready for booking your address is</p><p><strong>{{Address}}</strong></p>\",\n                \"templateId\": \"64f97763b2a60bc067999b13\"\n            },\n            {\n                \"value\": \"<p>hi dear </p><p><strong>{{name}} your booking is ready thanks </strong></p>\",\n                \"templateId\": \"6504684f77dd8c1fef26dc32\"\n            }\n        ]\n    },\n    {\n        \"_id\": \"64f7020dab33ca7f49d11865\",\n        \"table_name\": \"preferenceTest\",\n        \"column_name\": \"shortCode\",\n        \"sticky\": true,\n        \"position\": 3,\n        \"isShow\": true,\n        \"createdAt\": \"2023-09-05T10:25:17.327Z\",\n        \"updatedAt\": \"2023-09-05T10:25:17.327Z\",\n        \"__v\": 0,\n        \"column_values\": [\n            {\n                \"value\": \"otp_email\",\n                \"templateId\": \"63dd21410dfad5d58dddd07e\"\n            },\n            {\n                \"value\": \"booking_email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191c\"\n            },\n            {\n                \"value\": \"staff_invitation_email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191a\"\n            },\n            {\n                \"value\": \"service_provider_invitation_email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191b\"\n            },\n            {\n                \"value\": \"marketing_email\",\n                \"templateId\": \"63dd231a0dfad5d58dddd087\"\n            },\n            {\n                \"value\": \"invitation_email\",\n                \"templateId\": \"64f1d9ccb3f66235f161df86\"\n            },\n            {\n                \"value\": \"invitation_Email\",\n                \"templateId\": \"64f6faa1a0d8d0a598617b45\"\n            },\n            {\n                \"value\": \"promo_emailp0069\",\n                \"templateId\": \"64f6fcf1221c545e1103f29e\"\n            },\n            {\n                \"value\": \"sssss\",\n                \"templateId\": \"64f6ffd6221c545e1103f2b3\"\n            },\n            {\n                \"value\": \"555555\",\n                \"templateId\": \"64f70979221c545e1103f38a\"\n            },\n            {\n                \"value\": \"55\",\n                \"templateId\": \"64f72f48221c545e1103f4cb\"\n            },\n            {\n                \"value\": \"0909909\",\n                \"templateId\": \"64f97763b2a60bc067999b13\"\n            },\n            {\n                \"value\": \"777\",\n                \"templateId\": \"6504684f77dd8c1fef26dc32\"\n            }\n        ]\n    },\n    {\n        \"_id\": \"64f701e3ab33ca7f49d11860\",\n        \"table_name\": \"preferenceTest\",\n        \"column_name\": \"title\",\n        \"sticky\": true,\n        \"position\": 4,\n        \"isShow\": true,\n        \"createdAt\": \"2023-09-05T10:24:35.008Z\",\n        \"updatedAt\": \"2023-09-05T10:24:35.008Z\",\n        \"__v\": 0,\n        \"column_values\": [\n            {\n                \"value\": \"updated email\",\n                \"templateId\": \"63dd21410dfad5d58dddd07e\"\n            },\n            {\n                \"value\": \"Booking Email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191c\"\n            },\n            {\n                \"value\": \"Staff Invitation Email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191a\"\n            },\n            {\n                \"value\": \"Service Provider Invitation Email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191b\"\n            },\n            {\n                \"value\": \"Profile Update Email\",\n                \"templateId\": \"63dd231a0dfad5d58dddd087\"\n            },\n            {\n                \"value\": \"Staff Provider Invitation\",\n                \"templateId\": \"64f1d9ccb3f66235f161df86\"\n            },\n            {\n                \"value\": \"Staff Provider Invitation\",\n                \"templateId\": \"64f6faa1a0d8d0a598617b45\"\n            },\n            {\n                \"value\": \"Promotion Email\",\n                \"templateId\": \"64f6fcf1221c545e1103f29e\"\n            },\n            {\n                \"value\": \"sbsbbs\",\n                \"templateId\": \"64f6ffd6221c545e1103f2b3\"\n            },\n            {\n                \"value\": \"email send\",\n                \"templateId\": \"64f70979221c545e1103f38a\"\n            },\n            {\n                \"value\": \"dhhd\",\n                \"templateId\": \"64f72f48221c545e1103f4cb\"\n            },\n            {\n                \"value\": \"Email send order \",\n                \"templateId\": \"64f97763b2a60bc067999b13\"\n            },\n            {\n                \"value\": \"send\",\n                \"templateId\": \"6504684f77dd8c1fef26dc32\"\n            }\n        ]\n    },\n    {\n        \"_id\": \"64f701a8ab33ca7f49d1185d\",\n        \"table_name\": \"preferenceTest\",\n        \"column_name\": \"type\",\n        \"sticky\": false,\n        \"position\": 5,\n        \"isShow\": true,\n        \"createdAt\": \"2023-09-05T10:23:36.368Z\",\n        \"updatedAt\": \"2023-09-05T10:23:36.368Z\",\n        \"__v\": 0,\n        \"column_values\": [\n            {\n                \"value\": \"otp\",\n                \"templateId\": \"63dd21410dfad5d58dddd07e\"\n            },\n            {\n                \"value\": \"booking\",\n                \"templateId\": \"64edc3d8fcb2163fada7191c\"\n            },\n            {\n                \"value\": \"staff_invitaion\",\n                \"templateId\": \"64edc3d8fcb2163fada7191a\"\n            },\n            {\n                \"value\": \"invitation_email\",\n                \"templateId\": \"64edc3d8fcb2163fada7191b\"\n            },\n            {\n                \"value\": \"marketing\",\n                \"templateId\": \"63dd231a0dfad5d58dddd087\"\n            },\n            {\n                \"value\": \"invitation\",\n                \"templateId\": \"64f1d9ccb3f66235f161df86\"\n            },\n            {\n                \"value\": \"invitation\",\n                \"templateId\": \"64f6faa1a0d8d0a598617b45\"\n            },\n            {\n                \"value\": \"Draft\",\n                \"templateId\": \"64f6fcf1221c545e1103f29e\"\n            },\n            {\n                \"value\": \"Payment Confirmation\",\n                \"templateId\": \"64f6ffd6221c545e1103f2b3\"\n            },\n            {\n                \"value\": \"Payment Confirmation invitationy \",\n                \"templateId\": \"64f70979221c545e1103f38a\"\n            },\n            {\n                \"value\": \"Payment Confirmation sent\",\n                \"templateId\": \"64f72f48221c545e1103f4cb\"\n            },\n            {\n                \"value\": \"Payment Confirmation sent\",\n                \"templateId\": \"64f97763b2a60bc067999b13\"\n            },\n            {\n                \"value\": \"Payment Confirmation sent\",\n                \"templateId\": \"6504684f77dd8c1fef26dc32\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "table Admin Preference",
+			"item": [
+				{
+					"name": "addPreference",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"column_name\": \"title\",\r\n    \"columnId\":\"6526bcac7f31686bf2163f14\",\r\n    \"sticky\": false,\r\n    \"position\": 3,\r\n    \"isShow\":\"true\",\r\n    \"createdBy\":\"1\",\r\n    \"createdOn\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/preference-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePreference",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sticky\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_live}}/preference-admin/64de3f1bf65a027f4853acea"
+					},
+					"response": []
+				},
+				{
+					"name": "removePreference",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/preference-admin/64d4f865d5103bef5ebd3c39"
+					},
+					"response": []
+				},
+				{
+					"name": "getPreference",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smsSvcUrl_staging}}/preference-admin?table_name=preferenceTest",
+							"host": [
+								"{{smsSvcUrl_staging}}"
+							],
+							"path": [
+								"preference-admin"
+							],
+							"query": [
+								{
+									"key": "column_no",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sticky",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "_id",
+									"value": "64d4f865d5103bef5ebd3c39",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "table_name",
+									"value": "preferenceTest"
+								},
+								{
+									"key": "sort",
+									"value": "position, -sticky",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "table User Preference",
+			"item": [
+				{
+					"name": "addPreference",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"table_name\":\"Template\",\r\n    \"column_name\": \"\",\r\n    \"columnId\":\"651eda14c1f9e78581c5412e\",\r\n    \"sticky\": true,\r\n    \"sticky_priority\": 1,\r\n    \"priority\": 4,\r\n    \"position\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/preference-user"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePreference",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sticky\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl}}/preference-user/64f09c5fa405d9f574379efc"
+					},
+					"response": []
+				},
+				{
+					"name": "removePreference",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{smsSvcUrl_staging}}/preference-user/64f09c5fa405d9f574379efc"
+					},
+					"response": []
+				},
+				{
+					"name": "getPreference",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smsSvcUrl_staging}}/preference-user?_id=6526bd0c7f31686bf2163f19",
+							"host": [
+								"{{smsSvcUrl_staging}}"
+							],
+							"path": [
+								"preference-user"
+							],
+							"query": [
+								{
+									"key": "column_no",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sticky",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "_id",
+									"value": "6526bd0c7f31686bf2163f19"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "table_name",
+									"value": "test_deletion",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "position, -sticky",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sendBulkMessages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortCode\":\"promo_sms8dasnmi1\",\r\n    \"to\":[\"+923034276219\",\"923024507900\"],\r\n    \"country\":\"Pakistan\",\r\n    \"fields_info\":{\r\n        \"name\":\"umair\",\r\n        \"address\":\"Dha phase 6\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9002/sms_svc/message/send/bulk/test"
+			},
+			"response": []
+		},
+		{
+			"name": "getsmslogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{smsSvcUrl}}/logs?limit=100&sort=-createdAt",
+					"host": [
+						"{{smsSvcUrl}}"
+					],
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "sort",
+							"value": "-createdAt"
+						},
+						{
+							"key": "status",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "phones",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUserPreference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"21312\",\r\n    \"name\":\"umair\",\r\n    \"phoneNumber\":\"+923034276219\",\r\n    \"preferences\":[\"promo_sms1\",\"promo_email\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9002/user/preference"
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUMzMjAyYzNhYzAxMTdkMjhlMWJkMjhkYmVjYjlhMGVkYzplYmRmMzNmMjliMWMxNzEzNmRiNmIxZGM0YjdmN2IxMA==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"_id\":\"123\",\r\n    \"number\":\"+923034276219\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9002/sms/otp"
+			},
+			"response": []
+		}
+	]
+}
