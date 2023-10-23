@@ -1,0 +1,741 @@
+{
+	"info": {
+		"_postman_id": "47e99b68-538f-4b4e-87bd-0da9bb5b84a1",
+		"name": "Plexaar_individual_User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28989745"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "addNewEvents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"E-gaming\",\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventTypes/addNewEvents"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllEventTypes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventTypes/getAllEventTypes"
+					},
+					"response": []
+				},
+				{
+					"name": "getEventTypeById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eventId\": 0,\n  \"permissionId\": [0],\n  \"createdBy\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/eventTypes/getEventTypeById?id=2",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"eventTypes",
+								"getEventTypeById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEventTypes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"name\": \"Sports\",\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventTypes/updateEventTypes"
+					},
+					"response": []
+				},
+				{
+					"name": "removeEventType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventTypes/removeEventType"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Premissions",
+			"item": [
+				{
+					"name": "addNewPermissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Remove\",\n  \"description\": \"Remove \",\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Permissions/addNewPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPermissions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Permissions/getAllPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePermissions",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Permissions/updatePermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "removePermissions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Permissions/removePermissions"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EventPremission",
+			"item": [
+				{
+					"name": "addEventPermissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eventId\": 2,\n  \"permissionId\": [3,4,5],\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/addEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllEventPermissions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/getAllEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "getEventPermissionById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/getEventPermissionById?id=5",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"eventPermissions",
+								"getEventPermissionById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEventPermissions",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 3,//Event Role id\n  \"permissionId\":3,\n  \"eventId\": 2,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/updateEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "removeEventPermissions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 0,\n  \"modifiedBy\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/removeEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "removeEventPermissionsByEventId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eventId\": 0,\n  \"permissionId\": 0,\n  \"modifiedBy\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/eventPermissions/removeEventPermissionsByEventId"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "addNewRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Admin\",\n  \"description\": \"Admin\",\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Roles/addNewRole"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRoles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Roles/getAllRoles"
+					},
+					"response": []
+				},
+				{
+					"name": "getRoleById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"createdBy\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/Roles/getRoleById?id=1",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"Roles",
+								"getRoleById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoles",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"name\": \"Admin\",\n  \"description\": \"Admin\",\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Roles/updateRoles"
+					},
+					"response": []
+				},
+				{
+					"name": "removeRoles",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/Roles/removeRoles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AssignRoles",
+			"item": [
+				{
+					"name": "asignUserRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerId\": 2,\n  \"roleId\": 3,\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/asignUserRole"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUserRoles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/getAllUserRoles"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserRoleById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/getUserRoleById?id=1",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"userRoles",
+								"getUserRoleById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserRoleByUserId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/getUserRoleByUserId?userId=1",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"userRoles",
+								"getUserRoleByUserId"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserRoleByRoleId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/getUserRoleByRoleId?roleId=1",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"userRoles",
+								"getUserRoleByRoleId"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeUserRole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/userRoles/removeUserRole"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RoleEventPremissions",
+			"item": [
+				{
+					"name": "addNewRoleEventPermissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"roleId\": 3,\n  \"eventPermissionsId\": [3],\n  \"createdBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/RoleEventPermissions/addNewRoleEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "getRoleEventPermissionsById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Plexaar_live}}/individualuser_svc/pv/RoleEventPermissions/getRoleEventPermissionsById?id=1",
+							"host": [
+								"{{Plexaar_live}}"
+							],
+							"path": [
+								"individualuser_svc",
+								"pv",
+								"RoleEventPermissions",
+								"getRoleEventPermissionsById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoleEventPermissions",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"roleId\": 3,\n  \"eventPermissionsId\": 5,\n  \"modifiedBy\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/RoleEventPermissions/updateRoleEventPermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "removeRoleEventPermissions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 0,\n  \"modifiedBy\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Plexaar_live}}/individualuser_svc/pv/RoleEventPermissions/removeRoleEventPermissions"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Plexaar_live",
+			"value": "https://plexaargateway.findanexpert.net"
+		}
+	]
+}
