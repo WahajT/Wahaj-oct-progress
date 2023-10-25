@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+%-----------------------PACKAGES-----------------------%
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{svg}
+\usepackage{lettrine}
+
+%-----------------------TABLES ALIGNEMNET-----------------------%
+
+%-----------------------TITLE DOCUMENT-----------------------%
+\begin{document}
+	\input{Titlepage}
+ 
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+% \tableofcontents
+% \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\section{Plexaar  assigning premission and roles apis:}
+Today,I have tested the plexaar apis.I will share the postman collection.These are the apis in which i faced the issue.
+% \newline\textbf{Country:}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
+% \newline\textbf{Currencies:}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
+% \newline\textbf{Language:}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
+\newline\textbf{Customer:}
+\begin{itemize}
+    \item Customer is not creating.
+\end{itemize}
+\newline\textbf{eventTypes:}
+\begin{itemize}
+    \item \textbf{addNewEvent:} api it is not working.
+\end{itemize}
+ \textbf{Premission:}
+\begin{itemize}
+    \item \textbf{getAllPremission} api it is not working.
+    \item \textbf{updatePremission} api is not working.
+    \item \textbf{removePremisison} api is not working.
+\end{itemize}
+\textbf{eventPremission:}
+\begin{itemize}
+\item The \textbf{eventTypes:} api is not working so i can not set premission against these events.
+\end{itemize}
+\textbf{Roles:}
+\begin{itemize}
+    \item \textbf{addNewRole} This api is working but other apis are not working.
+\end{itemize}
+\textbf{RoleEvents:}
+\begin{itemize}
+    \item It need event Id in order to give role but our event type collection is not working.
+\end{itemize}
+\textbf{UserRoles:}
+\begin{itemize}
+    \item \textbf{asignUserRole} It is creating role but other api is not working.
+\end{itemize}
+\section{Admin site sms template}
+Waiting response from developer side as pervious issue was not resolved and now it is in progress.
+\section{Chat and Call module}
+It still need to be tested.
+
+\end{document}

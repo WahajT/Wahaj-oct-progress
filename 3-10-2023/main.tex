@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{article}
+%-----------------------PACKAGES-----------------------%
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{svg}
+\usepackage{lettrine}
+
+%-----------------------TABLES ALIGNEMNET-----------------------%
+
+%-----------------------TITLE DOCUMENT-----------------------%
+\begin{document}
+	\input{Titlepage}
+ 
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+% \tableofcontents
+% \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\section{Chat and Call Api}
+Today,I have tested the chat and call api module which is part of plexaar and expert.I will share the postman collection in folder and their flow.
+\begin{itemize}
+    \item First we add the contact by using api \textbf{AddNewContact},which is use to send request from one to other user.
+    \item \textbf{AcceptRequest} Once the request is send this api is use to accept the request.
+    \item \textbf{getallmessages} This api is used to get the all messages after accepting the request and message can be update by using the \textbf{UpdateNewMessage} api by passing the id text not the user id and you want to delete the message then \textbf{deleteMessageByID} api is use to delete the message by passing the text id
+    \item \textbf{deleteContact} It will delete the contact from the both side,if user1 send the request to user2 and they are connected after running the delete api the user1 still be able to see the pending request but it will show nothing to user2.
+    \newline The issue i have encounter is when we delete the contact than we are unable to connect the same user1 and user2 again.
+\end{itemize}
+\section{Admin Expert Sms api}
+Today,I have tested the Expert Sms api module which is part of expert admin side.I will share the postman collection and their flow.
+\begin{itemize}
+    \item There is issue in the template folder,the api is not updating the field column in it.
+\end{itemize}
+\section{front-end Admin site Expert Sms}
+Due to some issue it is not yet deployed from developer side.
+
+\end{document}

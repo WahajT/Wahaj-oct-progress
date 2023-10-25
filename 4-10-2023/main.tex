@@ -1,0 +1,41 @@
+\documentclass[12pt,a4paper]{article}
+%-----------------------PACKAGES-----------------------%
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{svg}
+\usepackage{lettrine}
+
+%-----------------------TABLES ALIGNEMNET-----------------------%
+
+%-----------------------TITLE DOCUMENT-----------------------%
+\begin{document}
+	\input{Titlepage}
+ 
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+% \tableofcontents
+% \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\section{Expert-Staging signup:}
+Today,I have tested the expert signup it has invalid country code issue,moreover it is not accepting the User name.
+\section{Expert Admin sms apis:}
+\begin{itemize}
+    \item In the template sms folder api issue \textbf{field} property is not changing from sticky to unsticky issue was not resolved,I made it solved today.
+    \item The table folder api which was use to create tables.I have faced the whenever we stick one table the fields in it are also not sticky with it due to which only tables were moving but the data in it were not,I have reported the issue.
+\end{itemize}
+\section{Expert front Admin sms:}
+\begin{itemize}
+    \item The design is not responsive in tables.
+    \item The tables name were Update and delete,It should be in proper format like e.g \textbf{Title,Template,\\shortCode and Field}.
+    \item unnecessary column should be delete.
+    \item Sms type field cannot be select from drop down menu when we try to update the field
+    \item SMS shortCode field should be empty in the add SMS template
+    \item  In add notes the font style is not working and there is no option for text align on left side.
+    
+\end{itemize}
+
+\end{document}

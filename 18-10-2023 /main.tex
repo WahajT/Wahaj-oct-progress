@@ -1,0 +1,102 @@
+\documentclass[12pt,a4paper]{article}
+%-----------------------PACKAGES-----------------------%
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{svg}
+\usepackage{lettrine}
+\usepackage{lettrine}
+\usepackage{svg}
+\usepackage{caption}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+%-----------------------TABLES ALIGNEMNET-----------------------%
+
+%-----------------------TITLE DOCUMENT-----------------------%
+\begin{document}
+	\input{Titlepage}
+ 
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+ \tableofcontents
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\section{Schedule Management}
+\subsection{Scope}
+In schedule management module the provider will be able to set the schedule slots and can make the slot repeat week wise,how ever he/she wants.
+\subsection{Functional Requirement}
+\begin{table}[h!]
+\caption{Functional Requirements}
+    \centering
+    \begin{tabular}{|l|p{7cm}|}
+    \hline
+       \textbf{Functionality No.}&\textbf{Description} \\ %end of row
+       \hline
+       \textbf{FR-1}&The provider should be able to create schedule slots specifying date, start time, end time, and any additional relevant information (e.g., location or service type).\\ %end of row
+       \hline
+         \textbf{FR-2}&The provider should have the option to make slots repeat on a weekly basis. This should include defining the recurrence pattern (e.g., every Monday and Wednesday) and the end date for recurring slots.\\ %end of row
+       \hline
+       \textbf{FR-3}& The system should maintain and display the availability of slots in real-time, ensuring that overbooking or double-booking is prevented.\\ %end of row
+       \hline
+     
+       \textbf{FR-4}& Providers should be able to edit or delete existing slots as needed. Modifications should be reflected accurately in the schedule.\\ %end of row
+       \hline
+       \textbf{FR-5}&The provider can schedule multiple slots within multiple different  business.\\ %end of row
+       \hline
+    \end{tabular}
+\end{table}
+\newpage
+\subsection{Non-Functional Requirement}
+\begin{table}[h!]
+\caption{Non-Functional Requirements}
+    \centering
+    \begin{tabular}{|l|p{7cm}|}
+    \hline
+       \textbf{Non-Functionality No.}&\textbf{Description} \\ %end of row
+       \hline
+       \textbf{NFR-1}&The system should respond swiftly to user actions, even when dealing with a large number of schedules and recurring slots. \\ %end of row
+       \hline
+       \textbf{NFR-2}&The system should respond swiftly to user actions, even when dealing with a large number of schedules and recurring slots.\\ %end of row
+       \hline
+       \textbf{NFR-3}&The system should be scalable to accommodate a growing number of providers and clients without compromising performance.\\ %end of row
+       \hline
+       \textbf{NFR-4}&The schedule management module should have a high level of availability and reliability. It should be operational 24/7 with minimal downtime.
+        \\ %end of row
+       \hline
+       \textbf{NFR-5}&The user interface should be intuitive and user-friendly, requiring minimal training for providers to create, manage, and understand their schedules.
+       \\ %end of row
+       \hline
+       % \textbf{NFR-6}&
+       %  \\ %end of row
+       % \hline
+       % \textbf{NFR-7}&
+       %  \\ %end of row
+       % \hline
+       % \textbf{NFR-8}&
+       % \\ %end of row
+       % \hline
+       % \textbf{NFR-9}&
+       %  \\ %end of row
+       % \hline
+       % \textbf{NFR-10}&
+       % \\ %end of row
+       % \hline   
+    \end{tabular}
+\end{table}
+
+
+\end{document}
