@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper]{article}
+%-----------------------PACKAGES-----------------------%
+\usepackage[top=1in,bottom=1in,left=0.5in,right=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{svg}
+\usepackage{lettrine}
+
+%-----------------------TABLES ALIGNEMNET-----------------------%
+
+%-----------------------TITLE DOCUMENT-----------------------%
+\begin{document}
+	\input{Titlepage}
+ 
+ \clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\tableofcontents
+\clearpage
+%-----------------------TABLE OF CONTENT-----------------------% 
+\section{Introduction}
+The Service Inventory module is designed to manage various types of services, providing a centralized system for storing and organizing services with different attributes and characteristics. This module will offer a range of features to support the efficient management of services.
+\subsection{Purpose}
+The purpose of this document is to outline the functional and non-functional requirements of the Service Inventory module, defining its capabilities and expected behavior.
+
+\section{Functional Requirement}
+\begin{table}[h]
+\caption{Functional Requirements}
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+    \hline
+       \textbf{Functionality No.}&\textbf{Description} \\ %end of row
+       \hline
+       \textbf{FR-1}&The system must allow administrators to associate multiple prices with each service based on the unit of measurement. Prices can vary based on different attributes.\\ %end of row
+       \hline
+         \textbf{FR-2}&Services can be defined with dynamic attributes, which can be customized based on the specific characteristics of the service.\\ %end of row
+       \hline
+       \textbf{FR-3}&Administrators can attach various supporting documents or resources related to a service. \\ %end of row
+       \hline
+     
+       \textbf{FR-4}&Services can be grouped into packages, providing a convenient way to bundle related services together.\\ %end of row
+       \hline
+       \textbf{FR-5}&Administrators can create service groups based on the nature of services. Services included in these groups can be automatically assembled into packages.\\ %end of row
+       \hline
+        \textbf{FR-6}&Services may have variable prices that can be updated by administrators as needed.\\ %end of row
+       \hline
+        \textbf{FR-7}&Each service can have a unique booking flow, allowing administrators to customize the service booking process.\\ %end of row
+       \hline
+        \textbf{FR-8}& Every service should have an associated cost, which can be defined and tracked. Costs can include expenses related to materials, labor, or other resources used in delivering the service.\\ %end of row
+       \hline
+    \end{tabular}
+\end{table}
+\newpage
+\section{Non-Functional Requirements}
+\begin{table}[h!]
+\caption{Non-Functional Requirements}
+    \centering
+    \begin{tabular}{|l|p{7cm}|}
+    \hline
+       \textbf{Functionality No.}&\textbf{Description} \\ %end of row
+       \hline
+       \textbf{FR-1}&The module shall implement robust security measures to protect sensitive data and ensure only authorized users can make changes.\\ %end of row
+       \hline
+         \textbf{FR-2}&The system must be able to handle a large number of services and their associated data efficiently, ensuring minimal latency.
+\\ %end of row
+       \hline
+       \textbf{FR-3}&The user interface must be intuitive and user-friendly to facilitate easy management of services and related features.
+ \\ %end of row
+       \hline
+    \end{tabular}
+\end{table}
+
+\end{document}
